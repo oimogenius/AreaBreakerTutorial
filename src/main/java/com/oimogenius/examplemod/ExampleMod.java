@@ -1,6 +1,7 @@
 package com.oimogenius.examplemod;
 
 import com.mojang.logging.LogUtils;
+import com.oimogenius.examplemod.enchantment.ModEnchantments;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,6 +24,8 @@ public class ExampleMod {
 
         modEventBus.addListener(this::commonSetup);
 
+        // レジストリをイベントバスに登録
+        ModEnchantments.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
